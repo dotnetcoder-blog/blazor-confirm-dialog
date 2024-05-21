@@ -1,0 +1,12 @@
+﻿.modal-dialog {
+    margin-top: 7rem;
+}
+
+.confirm-background {
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(15px);
+}
+
+.confirm-button {
+    min-width: 6rem;
+}

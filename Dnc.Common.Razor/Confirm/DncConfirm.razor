@@ -1,0 +1,58 @@
+﻿@inherits DncConfirmComponent
+
+@if (Visible)
+{
+    <div class="modal fade show confirm-background" id="DncConfirm" style="display: block;" aria-modal="true" role="dialog">
+        <div class="modal-dialog @(Scrollable ? " modal-dialog-scrollable":"")">
+            <div class="modal-content">
+                <div class="modal-header">
+                    @if (HeaderTemplate == null)
+                    {
+                        <h5 class="modal-title" id="exampleModalLabel">Confirm title</h5>
+                    }
+                    else
+                    {
+                        <h5>@HeaderTemplate</h5>
+                    }
+
+                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" @onclick="@Cancel"></button>
+                </div> 
+                <div class="modal-body">
+                    @if (BodyTemplate == null)
+                    {
+                        <p>You're reading the default text in a confirmation body!</p>
+                    }
+                    else
+                    {
+                        <p>@BodyTemplate</p>
+                    }
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary confirm-button" data-bs-dismiss="modal" @onclick="@Cancel">
+                        @if (CancelTemplate == null)
+                        {
+                            <span>Cancel</span>
+                        }
+                        else
+                        {
+                            @CancelTemplate
+                        }
+
+                    </button>
+                    <button type="button" class="btn btn-primary confirm-button" @onclick=@Ok>
+                        @if (OkTemplate == null)
+                        {
+                            <span>Ok</span>
+                        }
+                        else
+                        {
+                            @OkTemplate
+                        }
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+
